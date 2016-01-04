@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm flv.csv
+rm flv.out
 rm powerapi.out
 rm flv.png
 
@@ -13,6 +13,6 @@ kill $VLCPID
 kill $POWERPID
 
 ./script.sh
-mv data.csv flv.csv
+mv data.out flv.out
 
 gnuplot flv.conf

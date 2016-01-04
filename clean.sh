@@ -1,5 +1,4 @@
 #!/bin/bash
 
-rm *.csv
+rm *.out
 rm *.png
-rm powerapi.out

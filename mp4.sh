@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm mp4.csv
+rm mp4.out
 rm powerapi.out
 rm mp4.png
 
@@ -13,6 +13,6 @@ kill $VLCPID
 kill $POWERPID
 
 ./script.sh
-mv data.csv mp4.csv
+mv data.out mp4.out
 
 gnuplot mp4.conf

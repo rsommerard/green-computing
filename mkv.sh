@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm mkv.csv
+rm mkv.out
 rm powerapi.out
 rm mkv.png
 
@@ -13,6 +13,6 @@ kill $VLCPID
 kill $POWERPID
 
 ./script.sh
-mv data.csv mkv.csv
+mv data.out mkv.out
 
 gnuplot mkv.conf
