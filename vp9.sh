@@ -1,18 +1,18 @@
 #!/bin/bash
 
-rm flv.out
+rm vp9.out
 rm powerapi.out
-rm flv.png
+rm vp9.png
 
-vlc SampleVideo_1080x720_1mb.flv &
+vlc ConstantQualityvp9.webm &
 VLCPID=$!
 ./bin/powerapi 84 100 $VLCPID &
 POWERPID=$!
-sleep 10;
+sleep 15;
 kill $VLCPID
 kill $POWERPID
 
 ./script.sh
-mv data.out flv.out
+mv data.out vp9.out
 
-gnuplot flv.conf
+gnuplot vp9.conf

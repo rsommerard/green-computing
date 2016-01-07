@@ -1,18 +1,18 @@
 #!/bin/bash
 
-rm mkv.out
+rm LLvp9.out
 rm powerapi.out
-rm mkv.png
+rm LLvp9.png
 
-vlc SampleVideo_1080x720_1mb.mkv &
+vlc losslessvp9.webm &
 VLCPID=$!
 ./bin/powerapi 84 100 $VLCPID &
 POWERPID=$!
-sleep 10;
+sleep 15;
 kill $VLCPID
 kill $POWERPID
 
 ./script.sh
-mv data.out mkv.out
+mv data.out LLvp9.out
 
-gnuplot mkv.conf
+gnuplot LLvp9.conf

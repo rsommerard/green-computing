@@ -49,6 +49,43 @@ with open("vp8.out", "r") as f:
 vp8average = vp8num/vp8den
 print vp8average
 
+vp9num = 0.0
+vp9den = 0
+
+with open("vp9.out", "r") as f:
+  for line in f:
+    power = line.split(" ")[1]
+    vp9num += float(power.split("\n")[0])
+    vp9den += 1
+
+vp9average = vp9num/vp9den
+print vp9average
+
+LLvp8num = 0.0
+LLvp8den = 0
+
+with open("LLvp8.out", "r") as f:
+  for line in f:
+    power = line.split(" ")[1]
+    LLvp8num += float(power.split("\n")[0])
+    LLvp8den += 1
+
+LLvp8average = LLvp8num/LLvp8den
+print LLvp8average
+
+
+LLvp9num = 0.0
+LLvp9den = 0
+
+with open("LLvp9.out", "r") as f:
+  for line in f:
+    power = line.split(" ")[1]
+    LLvp9num += float(power.split("\n")[0])
+    LLvp9den += 1
+
+LLvp9average = LLvp9num/LLvp9den
+print LLvp9average
+
 with open("average.out", "w") as f:
-  f.write('codec part14 h-264 vp8 yuv\n')
-  f.write("Average " + str(part14average) + " " + str(h264average) + " " + str(vp8average)+ " " + str(yuvaverage))
+  f.write('codec part14 h-264 vp8 vp9 LLvp8 LLvp9 yuv\n')
+  f.write("Average " + str(part14average) + " " + str(h264average) + " " + str(vp8average)+ " " + str(vp9average)+ " " + str(LLvp8average)+ " " + str(LLvp9average)+ " " + str(yuvaverage))

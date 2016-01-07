@@ -1,18 +1,18 @@
 #!/bin/bash
 
-rm mp4.out
+rm LLvp8.out
 rm powerapi.out
-rm mp4.png
+rm LLvp8.png
 
-vlc SampleVideo_1080x720_1mb.mp4 &
+vlc losslessvp8.webm &
 VLCPID=$!
 ./bin/powerapi 84 100 $VLCPID &
 POWERPID=$!
-sleep 10;
+sleep 15;
 kill $VLCPID
 kill $POWERPID
 
 ./script.sh
-mv data.out mp4.out
+mv data.out LLvp8.out
 
-gnuplot mp4.conf
+gnuplot LLvp8.conf
