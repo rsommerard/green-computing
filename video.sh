@@ -1,24 +1,19 @@
 #!/bin/bash
 
 chmod +x *.sh
-./mpeg-4_part14.sh
-./h-264.sh
-./vp8.sh
-./vp9.sh
-./LLvp8.sh
-./LLvp9.sh
-./LCh-265.sh
-./HCh-265.sh
-./LCFLh-264.sh
-./LCFLh-265.sh
-./HCFLh-264.sh
-./HCFLh-265.sh
-./LCLLh-264.sh
-./LCLLh-265.sh
-./HCLLh-264.sh
-./HCLLh-265.sh
-./yuv.sh
+
+./lecteur.sh
 
 python compute_video.py
+
+echo "set terminal png size 1024,768 enhanced font \"Helvetica,20\"
+set output 'average.png'
+
+set ylabel \"Power (mW)\"
+
+set style fill solid border
+set style data histogram
+set style histogram clustered
+plot for [COL=2:7] \"average.out\" using COL:xticlabels(1)  title columnheader" > video.conf
 
 gnuplot video.conf

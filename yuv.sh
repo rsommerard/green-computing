@@ -4,7 +4,7 @@ rm yuv.out
 rm powerapi.out
 rm yuv.png
 
-vlc bsk.yuv &
+vlc video/bsk.yuv &
 VLCPID=$!
 ./bin/powerapi 84 100 $VLCPID &
 POWERPID=$!

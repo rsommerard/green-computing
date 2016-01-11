@@ -2,3 +2,4 @@
 
 rm *.out
 rm *.png
+rm *.conf
